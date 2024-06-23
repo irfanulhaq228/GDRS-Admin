@@ -16,20 +16,20 @@ const Setting = () => {
     dispatch(updateSidebar(true));
   };
   return (
-    <div className="flex-1 bg-[var(--main-bg-color)] min-h-screen p-7 pt-[48px]">
+    <div className="flex-1 bg-[var(--main-bg-color)] min-h-screen py-7 px-[15px] sm:px-[30px]  pt-[48px]">
       <button
-        className="absolute top-5 left-8 text-[20px] text-[var(--main-text-color)] cursor-pointer"
+        className="absolute top-5 left-[18px] text-[20px] text-[var(--main-text-color)] cursor-pointer"
         onClick={fn_controlSideBar}
       >
         <TbLayoutSidebarRightCollapse />
       </button>
-      <div className="bg-white px-10 py-8 rounded-[8px] shadow-md">
+      <div className="bg-white px-5 sm:px-10 py-8 rounded-[8px] shadow-md">
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:justify-between border-b-[2px] pb-4 sm:items-center">
+        <div className="flex flex-col sm:flex-row gap-2 sm:justify-between border-b-[2px] pb-4 sm:items-center">
           <p className="text-[17px] font-[600] text-[var(--main-text-color)]">
             Account Setting
           </p>
-          <div className="flex gap-[17px] justify-end">
+          <div className="flex gap-[17px] justify-center sm:justify-end">
             <button className="rounded-[5px] h-[30px] w-[100px] border border-[#00004B] text-[11px] font-[600] text-[var(--main-text-color)]">
               Cancel
             </button>

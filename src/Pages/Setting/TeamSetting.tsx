@@ -1,10 +1,11 @@
 import { useState } from "react";
 
 const TeamSetting = () => {
-  const [enabled, setEnabled] = useState(false);
-  const toggle = () => {
-    setEnabled(!enabled);
-  };
+  const [enabledOne, setEnabledOne] = useState(false);
+  const [enabledTwo, setEnabledTwo] = useState(false);
+  const [enabledThree, setEnabledThree] = useState(false);
+  const [enabledFour, setEnabledFour] = useState(false);
+  const [enabledFive, setEnabledFive] = useState(false);
   return (
     <div className="py-9 border-b-[2px]">
       <p className="text-[17px] font-[600] text-[var(--main-text-color)]">
@@ -17,16 +18,22 @@ const TeamSetting = () => {
               Allow Team members to share team link
             </label>
             <button
-              onClick={toggle}
-              className={`w-[40px] h-[21px] flex items-center bg-gray-300 rounded-full p-1 cursor-pointer transition-colors duration-300 ${
-                enabled ? "bg-[#20C88B]" : "bg-[var(--main-dark-color)]"
+              onClick={() => setEnabledOne(!enabledOne)}
+              className={`relative w-[43px] h-[21px] flex items-center rounded-full p-1 cursor-pointer transition-colors duration-300 ${
+                enabledOne ? "bg-[#20C88B]" : "bg-[var(--main-dark-color)]"
               }`}
             >
               <div
                 className={`bg-white w-[15px] h-[15px] rounded-full shadow-md transform transition-transform duration-300 ${
-                  enabled ? "translate-x-4" : ""
+                  enabledOne ? "translate-x-5" : ""
                 }`}
               />
+              <span className="absolute text-white left-1.5 text-[9px] font-[500] top-1">
+                On
+              </span>
+              <span className="absolute text-white right-1.5 text-[9px] font-[500] top-1">
+                Off
+              </span>
             </button>
           </div>
           <div className="flex items-center justify-between xl:justify-normal flex-1 xl:flex-none">
@@ -34,16 +41,22 @@ const TeamSetting = () => {
               Allow Team members to share team Rankings
             </label>
             <button
-              onClick={toggle}
-              className={`w-[40px] h-[21px] flex items-center bg-gray-300 rounded-full p-1 cursor-pointer transition-colors duration-300 ${
-                enabled ? "bg-[#20C88B]" : "bg-[var(--main-dark-color)]"
+              onClick={() => setEnabledTwo(!enabledTwo)}
+              className={`relative w-[43px] h-[21px] flex items-center rounded-full p-1 cursor-pointer transition-colors duration-300 ${
+                enabledTwo ? "bg-[#20C88B]" : "bg-[var(--main-dark-color)]"
               }`}
             >
               <div
                 className={`bg-white w-[15px] h-[15px] rounded-full shadow-md transform transition-transform duration-300 ${
-                  enabled ? "translate-x-4" : ""
+                  enabledTwo ? "translate-x-5" : ""
                 }`}
               />
+              <span className="absolute text-white left-1.5 text-[9px] font-[500] top-1">
+                On
+              </span>
+              <span className="absolute text-white right-1.5 text-[9px] font-[500] top-1">
+                Off
+              </span>
             </button>
           </div>
         </div>
@@ -53,16 +66,22 @@ const TeamSetting = () => {
               Allow members to update team profile Picture
             </label>
             <button
-              onClick={toggle}
-              className={`w-[40px] h-[21px] flex items-center bg-gray-300 rounded-full p-1 cursor-pointer transition-colors duration-300 ${
-                enabled ? "bg-[#20C88B]" : "bg-[var(--main-dark-color)]"
+              onClick={() => setEnabledThree(!enabledThree)}
+              className={`relative w-[43px] h-[21px] flex items-center rounded-full p-1 cursor-pointer transition-colors duration-300 ${
+                enabledThree ? "bg-[#20C88B]" : "bg-[var(--main-dark-color)]"
               }`}
             >
               <div
                 className={`bg-white w-[15px] h-[15px] rounded-full shadow-md transform transition-transform duration-300 ${
-                  enabled ? "translate-x-4" : ""
+                  enabledThree ? "translate-x-5" : ""
                 }`}
               />
+              <span className="absolute text-white left-1.5 text-[9px] font-[500] top-1">
+                On
+              </span>
+              <span className="absolute text-white right-1.5 text-[9px] font-[500] top-1">
+                Off
+              </span>
             </button>
           </div>
           <div className="flex items-center justify-between xl:justify-normal flex-1 xl:flex-none">
@@ -70,16 +89,22 @@ const TeamSetting = () => {
               Allow members to see their rankings
             </label>
             <button
-              onClick={toggle}
-              className={`w-[40px] h-[21px] flex items-center bg-gray-300 rounded-full p-1 cursor-pointer transition-colors duration-300 ${
-                enabled ? "bg-[#20C88B]" : "bg-[var(--main-dark-color)]"
+              onClick={() => setEnabledFour(!enabledFour)}
+              className={`relative w-[43px] h-[21px] flex items-center rounded-full p-1 cursor-pointer transition-colors duration-300 ${
+                enabledFour ? "bg-[#20C88B]" : "bg-[var(--main-dark-color)]"
               }`}
             >
               <div
                 className={`bg-white w-[15px] h-[15px] rounded-full shadow-md transform transition-transform duration-300 ${
-                  enabled ? "translate-x-4" : ""
+                  enabledFour ? "translate-x-5" : ""
                 }`}
               />
+              <span className="absolute text-white left-1.5 text-[9px] font-[500] top-1">
+                On
+              </span>
+              <span className="absolute text-white right-1.5 text-[9px] font-[500] top-1">
+                Off
+              </span>
             </button>
           </div>
         </div>
@@ -89,16 +114,22 @@ const TeamSetting = () => {
               Show members alphabetically while sharing
             </label>
             <button
-              onClick={toggle}
-              className={`w-[40px] h-[21px] flex items-center bg-gray-300 rounded-full p-1 cursor-pointer transition-colors duration-300 ${
-                enabled ? "bg-[#20C88B]" : "bg-[var(--main-dark-color)]"
+              onClick={() => setEnabledFive(!enabledFive)}
+              className={`relative w-[43px] h-[21px] flex items-center rounded-full p-1 cursor-pointer transition-colors duration-300 ${
+                enabledFive ? "bg-[#20C88B]" : "bg-[var(--main-dark-color)]"
               }`}
             >
               <div
                 className={`bg-white w-[15px] h-[15px] rounded-full shadow-md transform transition-transform duration-300 ${
-                  enabled ? "translate-x-4" : ""
+                  enabledFive ? "translate-x-5" : ""
                 }`}
               />
+              <span className="absolute text-white left-1.5 text-[9px] font-[500] top-1">
+                On
+              </span>
+              <span className="absolute text-white right-1.5 text-[9px] font-[500] top-1">
+                Off
+              </span>
             </button>
           </div>
           <div className="flex-1"></div>
