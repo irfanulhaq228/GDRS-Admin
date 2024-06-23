@@ -22,13 +22,13 @@ const Dashboard = () => {
   return (
     <div className="flex-1 pb-10 bg-[var(--main-bg-color)] min-h-screen p-1">
       <button
-        className="absolute top-5 left-8 text-[20px] text-[var(--main-text-color)] cursor-pointer"
+        className="absolute top-5 left-[18px] text-[20px] text-[var(--main-text-color)] cursor-pointer"
         onClick={fn_controlSideBar}
       >
         <TbLayoutSidebarRightCollapse />
       </button>
       <Navbar />
-      <div className="mt-10 mx-[30px] flex flex-col xl:flex-row gap-[10px] justify-between 2xl:justify-center 2xl:gap-[50px] text-[var(--main-text-color)]">
+      <div className="mt-10 mx-[15px] sm:mx-[30px] flex flex-col xl:flex-row gap-[10px] justify-between 2xl:justify-center 2xl:gap-[50px] text-[var(--main-text-color)]">
         <div
           className="bg-white rounded-[8px] w-[100%] xl:w-[305px] h-[175px] flex flex-col justify-end px-[30px] pb-[15px]"
           style={{ boxShadow: "box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;" }}
