@@ -1,0 +1,153 @@
+@media screen and (max-width: 650px){
+    .members-list{
+        display: none;
+    }
+}
+
+.scrollable-box{
+    width: 150px;
+}
+
+@media screen and (min-width: 415px){
+    .scrollable-box{
+        width: 190px;
+    }
+}
+
+@media screen and (min-width: 455px){
+    .scrollable-box{
+        width: 230px;
+    }
+}
+
+@media screen and (min-width: 495px){
+    .scrollable-box{
+        width: 270px;
+    }
+}
+
+@media screen and (min-width: 535px){
+    .scrollable-box{
+        width: 310px;
+    }
+}
+
+@media screen and (min-width: 575px){
+    .scrollable-box{
+        width: 350px;
+    }
+}
+
+@media screen and (min-width: 600px){
+    .scrollable-box{
+        width: 390px;
+    }
+}
+
+@media screen and (min-width: 650px){
+    .scrollable-box{
+        width: 210px;
+    }
+}
+
+@media screen and (min-width: 690px){
+    .scrollable-box{
+        width: 250px;
+    }
+}
+
+@media screen and (min-width: 730px){
+    .scrollable-box{
+        width: 290px;
+    }
+}
+
+@media screen and (min-width: 770px){
+    .scrollable-box{
+        width: 330px;
+    }
+}
+
+@media screen and (min-width: 810px){
+    .scrollable-box{
+        width: 370px;
+    }
+}
+
+@media screen and (min-width: 850px){
+    .scrollable-box{
+        width: 407px;
+    }
+}
+
+@media screen and (min-width: 885px){
+    .scrollable-box{
+        width: 445px;
+    }
+}
+
+@media screen and (min-width: 923px){
+    .scrollable-box{
+        width: 480px;
+    }
+}
+
+@media screen and (min-width: 960px){
+    .scrollable-box{
+        width: 520px;
+    }
+}
+
+@media screen and (min-width: 995px){
+    .scrollable-box{
+        width: 550px;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .scrollable-box{
+        width: 300px;
+    }
+}
+
+@media screen and (min-width: 1063px){
+    .scrollable-box{
+        width: 330px;
+    }
+}
+
+@media screen and (min-width: 1115px){
+    .scrollable-box{
+        width: 380px;
+    }
+}
+
+@media screen and (min-width: 1155px){
+    .scrollable-box{
+        width: 420px;
+    }
+}
+
+@media screen and (min-width: 1210px){
+    .scrollable-box{
+        width: 470px;
+    }
+}
+
+@media screen and (min-width: 1260px){
+    .scrollable-box{
+        width: 520px;
+    }
+}
+
+@media screen and (min-width: 1340px){
+    .scrollable-box{
+        width: 600px;
+    }
+}
+
+@media screen and (min-width: 1410px){
+    .scrollable-box{
+        width: auto;
+    }
+}
