@@ -19,7 +19,7 @@ const TeamSetting = () => {
             </label>
             <button
               onClick={() => setEnabledOne(!enabledOne)}
-              className={`relative w-[43px] min-h-[21px] flex items-center rounded-full p-1 cursor-pointer transition-colors duration-300 ${
+              className={`relative min-w-[43px] min-h-[21px] flex items-center rounded-full p-1 cursor-pointer transition-colors duration-300 ${
                 enabledOne ? "bg-[#20C88B]" : "bg-[var(--main-dark-color)]"
               }`}
             >
@@ -42,7 +42,7 @@ const TeamSetting = () => {
             </label>
             <button
               onClick={() => setEnabledTwo(!enabledTwo)}
-              className={`relative w-[43px] min-h-[21px] flex items-center rounded-full p-1 cursor-pointer transition-colors duration-300 ${
+              className={`relative min-w-[43px] min-h-[21px] flex items-center rounded-full p-1 cursor-pointer transition-colors duration-300 ${
                 enabledTwo ? "bg-[#20C88B]" : "bg-[var(--main-dark-color)]"
               }`}
             >
@@ -67,7 +67,7 @@ const TeamSetting = () => {
             </label>
             <button
               onClick={() => setEnabledThree(!enabledThree)}
-              className={`relative w-[43px] min-h-[21px] flex items-center rounded-full p-1 cursor-pointer transition-colors duration-300 ${
+              className={`relative min-w-[43px] min-h-[21px] flex items-center rounded-full p-1 cursor-pointer transition-colors duration-300 ${
                 enabledThree ? "bg-[#20C88B]" : "bg-[var(--main-dark-color)]"
               }`}
             >
@@ -90,7 +90,7 @@ const TeamSetting = () => {
             </label>
             <button
               onClick={() => setEnabledFour(!enabledFour)}
-              className={`relative w-[43px] min-h-[21px] flex items-center rounded-full p-1 cursor-pointer transition-colors duration-300 ${
+              className={`relative min-w-[43px] min-h-[21px] flex items-center rounded-full p-1 cursor-pointer transition-colors duration-300 ${
                 enabledFour ? "bg-[#20C88B]" : "bg-[var(--main-dark-color)]"
               }`}
             >
@@ -115,7 +115,7 @@ const TeamSetting = () => {
             </label>
             <button
               onClick={() => setEnabledFive(!enabledFive)}
-              className={`relative w-[43px] min-h-[21px] flex items-center rounded-full p-1 cursor-pointer transition-colors duration-300 ${
+              className={`relative min-w-[43px] min-h-[21px] flex items-center rounded-full p-1 cursor-pointer transition-colors duration-300 ${
                 enabledFive ? "bg-[#20C88B]" : "bg-[var(--main-dark-color)]"
               }`}
             >
