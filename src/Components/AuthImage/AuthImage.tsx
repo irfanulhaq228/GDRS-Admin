@@ -3,7 +3,7 @@ import img from "../../assets/images/Auth-img.png";
 const AuthImage = () => {
   return (
     <div
-      className="flex-1 relative flex justify-center items-center bg-[red]"
+      className="flex-1 relative flex justify-center items-center"
       style={{
         backgroundImage: `url(${img})`,
         backgroundSize: "cover",

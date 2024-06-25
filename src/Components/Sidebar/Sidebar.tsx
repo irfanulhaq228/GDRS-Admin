@@ -54,7 +54,7 @@ const Sidebar = () => {
         <img src={svg} width={"34px"} />
         <div>
           <p className="text-[17px] font-[600]">Kevin Karter</p>
-          <p className="text-[11px]">jr admin</p>
+          <p className="text-[11px]">Admin</p>
         </div>
       </div>
       <div className="mx-[15px] my-[18px] flex gap-[15px] flex-1">
