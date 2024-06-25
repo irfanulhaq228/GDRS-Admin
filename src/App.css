@@ -31,3 +31,43 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   cursor: pointer;
 }
+
+@media screen and (max-width: 465px) {
+  .created-tasks-table-main{
+    width: 85vw !important;
+  } 
+}
+
+@media screen and (max-width: 450px) {
+  .created-tasks-table-main{
+    width: 82vw !important;
+  } 
+}
+
+@media screen and (max-width: 400px) {
+  .created-tasks-table-main{
+    width: 80vw !important;
+  } 
+}
+@media screen and (max-width: 360px) {
+  .created-tasks-table-main{
+    width: 79vw !important;
+  } 
+}
+@media screen and (max-width: 330px) {
+  .created-tasks-table-main{
+    width: 78vw !important;
+  } 
+}
+
+@media screen and (max-width: 300px) {
+  .created-tasks-table-main{
+    width: 77vw !important;
+  } 
+}
+
+@media screen and (max-width: 270px) {
+  .created-tasks-table-main{
+    width: 76vw !important;
+  } 
+}

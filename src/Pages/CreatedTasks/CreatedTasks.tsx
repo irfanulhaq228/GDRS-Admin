@@ -57,6 +57,7 @@ const CreatedTasks = () => {
         <div className="mt-[15px] flex justify-end">
           <input
             type="date"
+            placeholder="Select Date"
             className="border-[2px] border-[#00004B] rounded-[5px] w-[115px] text-[12px] px-1 h-[29px] text-[#00004B] font-[500]"
           />
         </div>

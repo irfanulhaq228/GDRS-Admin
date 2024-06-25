@@ -4,7 +4,7 @@ import data from "../../assets/data/CreatedTasks";
 
 const TasksList = () => {
   return (
-    <div className="pt-[15px] w-[75vw] sm:w-full overflow-x-auto">
+    <div className="created-tasks-table-main pt-[15px] w-[88vw] sm:w-full overflow-x-auto">
       <table className="w-[700px] sm:w-full rounded-[8px]">
         <tbody>
           {data?.map((item) => (
