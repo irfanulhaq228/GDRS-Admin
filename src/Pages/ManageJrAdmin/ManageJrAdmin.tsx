@@ -87,7 +87,7 @@ const JrAdminBox = ({ functionControl, property, index, value }: any) => {
         </div>
       </div>
       {/* hr admin table */}
-      <JrAdminTable showJrAdmins={value} />
+      {/* <JrAdminTable showJrAdmins={value} /> */}
     </div>
   );
 };
