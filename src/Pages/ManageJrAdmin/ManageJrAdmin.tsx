@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
-// import JrAdminTable from "./JrAdminTable";
+import JrAdminTable from "./JrAdminTable";
 
 import { updatePageNavigation, updateSidebar } from "../../Features/Features";
 
@@ -87,7 +87,7 @@ const JrAdminBox = ({ functionControl, property, index, value }: any) => {
         </div>
       </div>
       {/* hr admin table */}
-      {/* <JrAdminTable showJrAdmins={value} /> */}
+      <JrAdminTable showJrAdmins={value} />
     </div>
   );
 };
