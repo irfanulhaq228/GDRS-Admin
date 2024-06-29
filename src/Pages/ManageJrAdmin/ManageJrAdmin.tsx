@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
-import JrAdminTable from "./JrAdminTable";
+// import JrAdminTable from "./JrAdminTable";
 
 import { updatePageNavigation, updateSidebar } from "../../Features/Features";
 
