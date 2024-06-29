@@ -8,7 +8,7 @@ const JrAdminTable = ({ showJrAdmins }: { showJrAdmins: boolean }) => {
         !showJrAdmins ? "max-h-0" : "max-h-[400px] pt-6"
       } overflow-x-auto md:overflow-hidden transition-all duration-500 w-[90vw] sm:w-[85vw] md:w-full`}
     >
-      <table className={`w-[800px] md:w-full text-[12px] md:bg-[red]`}>
+      <table className={`w-[800px] md:w-full text-[12px]`}>
         <thead className="font-[600]">
           <tr className="leading-[40px] shadow-sm">
             <td className="rounded-bl-[5px] rounded-tl-[5px] bg-[var(--main-bg-color)] ps-5">
