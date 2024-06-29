@@ -6,7 +6,7 @@ const JrAdminTable = ({ showJrAdmins }: { showJrAdmins: boolean }) => {
     <div
       className={`${
         !showJrAdmins ? "max-h-0" : "max-h-[400px] pt-6"
-      } overflow-x-auto md:overflow-hidden transition-all duration-500 w-[90vw] sm:w-[85vw] md:w-full`}
+      } overflow-x-auto md:overflow-hidden transition-all duration-500 w-[87vw] sm:w-[85vw] md:w-full`}
     >
       <table className={`w-[800px] md:w-full text-[12px]`}>
         <thead className="font-[600]">
