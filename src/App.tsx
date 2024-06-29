@@ -18,6 +18,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "./Features/Features";
 import CreatedTasks from "./Pages/CreatedTasks/CreatedTasks";
 import CreatedTeams from "./Pages/CreatedTeams/CreatedTeams";
+import ManageJrAdmin from "./Pages/ManageJrAdmin/ManageJrAdmin";
 
 function AppContent() {
   const location = useLocation();
@@ -45,6 +46,7 @@ function AppContent() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/created-teams" element={<CreatedTeams />} />
           <Route path="/created-tasks" element={<CreatedTasks />} />
+          <Route path="/manage-junior-admin" element={<ManageJrAdmin />} />
           <Route path="/settings" element={<Setting />} />
         </Routes>
       </div>
