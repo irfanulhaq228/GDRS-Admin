@@ -5,6 +5,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import "./App.css";
+import { useSelector } from "react-redux";
 import Sidebar from "./Components/Sidebar/Sidebar";
 
 import Signin from "./Pages/Auth/Signin";
@@ -14,11 +15,11 @@ import ResetPassword from "./Pages/Auth/ResetPassword";
 
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Setting from "./Pages/Setting/Setting";
-import { useSelector } from "react-redux";
 import { RootState } from "./Features/Features";
 import CreatedTasks from "./Pages/CreatedTasks/CreatedTasks";
 import CreatedTeams from "./Pages/CreatedTeams/CreatedTeams";
 import ManageJrAdmin from "./Pages/ManageJrAdmin/ManageJrAdmin";
+import TeamAnalytics from "./Pages/TeamAnalytics/TeamAnalytics";
 
 function AppContent() {
   const location = useLocation();
@@ -45,6 +46,7 @@ function AppContent() {
 
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/created-teams" element={<CreatedTeams />} />
+          <Route path="/team-analytics" element={<TeamAnalytics />} />
           <Route path="/created-tasks" element={<CreatedTasks />} />
           <Route path="/manage-junior-admin" element={<ManageJrAdmin />} />
           <Route path="/settings" element={<Setting />} />
