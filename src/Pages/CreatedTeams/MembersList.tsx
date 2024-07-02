@@ -31,77 +31,52 @@ const MembersList = () => {
         <p
           className={`cursor-pointer rounded-[4px] mx-2.5 mt-[8px] bg-white hover:bg-[var(--main-dark-color)] hover:text-white flex items-center justify-center h-[30px] font-[600] text-[12px]`}
         >
-          Ali Akbar
+          Basit
         </p>
         <p
           className={`cursor-pointer rounded-[4px] mx-2.5 mt-[8px] bg-white hover:bg-[var(--main-dark-color)] hover:text-white flex items-center justify-center h-[30px] font-[600] text-[12px]`}
         >
-          Ali Akbar
+          Daniyal
         </p>
         <p
           className={`cursor-pointer rounded-[4px] mx-2.5 mt-[8px] bg-white hover:bg-[var(--main-dark-color)] hover:text-white flex items-center justify-center h-[30px] font-[600] text-[12px]`}
         >
-          Ali Akbar
+          Taimoor
         </p>
         <p
           className={`cursor-pointer rounded-[4px] mx-2.5 mt-[8px] bg-white hover:bg-[var(--main-dark-color)] hover:text-white flex items-center justify-center h-[30px] font-[600] text-[12px]`}
         >
-          Ali Akbar
+          Yasir
         </p>
         <p
           className={`cursor-pointer rounded-[4px] mx-2.5 mt-[8px] bg-white hover:bg-[var(--main-dark-color)] hover:text-white flex items-center justify-center h-[30px] font-[600] text-[12px]`}
         >
-          Ali Akbar
+          Zain
         </p>
         <p
           className={`cursor-pointer rounded-[4px] mx-2.5 mt-[8px] bg-white hover:bg-[var(--main-dark-color)] hover:text-white flex items-center justify-center h-[30px] font-[600] text-[12px]`}
         >
-          Ali Akbar
+          Zeeshan
         </p>
         <p
           className={`cursor-pointer rounded-[4px] mx-2.5 mt-[8px] bg-white hover:bg-[var(--main-dark-color)] hover:text-white flex items-center justify-center h-[30px] font-[600] text-[12px]`}
         >
-          Ali Akbar
+          Zeeshan
         </p>
         <p
           className={`cursor-pointer rounded-[4px] mx-2.5 mt-[8px] bg-white hover:bg-[var(--main-dark-color)] hover:text-white flex items-center justify-center h-[30px] font-[600] text-[12px]`}
         >
-          Ali Akbar
+          Zeeshan
         </p>
         <p
           className={`cursor-pointer rounded-[4px] mx-2.5 mt-[8px] bg-white hover:bg-[var(--main-dark-color)] hover:text-white flex items-center justify-center h-[30px] font-[600] text-[12px]`}
         >
-          Ali Akbar
+          Zeeshan
         </p>
         <p
           className={`cursor-pointer rounded-[4px] mx-2.5 mt-[8px] bg-white hover:bg-[var(--main-dark-color)] hover:text-white flex items-center justify-center h-[30px] font-[600] text-[12px]`}
         >
-          Ali Akbar
-        </p>
-        <p
-          className={`cursor-pointer rounded-[4px] mx-2.5 mt-[8px] bg-white hover:bg-[var(--main-dark-color)] hover:text-white flex items-center justify-center h-[30px] font-[600] text-[12px]`}
-        >
-          Ali Akbar
-        </p>
-        <p
-          className={`cursor-pointer rounded-[4px] mx-2.5 mt-[8px] bg-white hover:bg-[var(--main-dark-color)] hover:text-white flex items-center justify-center h-[30px] font-[600] text-[12px]`}
-        >
-          Ali Akbar
-        </p>
-        <p
-          className={`cursor-pointer rounded-[4px] mx-2.5 mt-[8px] bg-white hover:bg-[var(--main-dark-color)] hover:text-white flex items-center justify-center h-[30px] font-[600] text-[12px]`}
-        >
-          Ali Akbar
-        </p>
-        <p
-          className={`cursor-pointer rounded-[4px] mx-2.5 mt-[8px] bg-white hover:bg-[var(--main-dark-color)] hover:text-white flex items-center justify-center h-[30px] font-[600] text-[12px]`}
-        >
-          Ali Akbar
-        </p>
-        <p
-          className={`cursor-pointer rounded-[4px] mx-2.5 mt-[8px] bg-white hover:bg-[var(--main-dark-color)] hover:text-white flex items-center justify-center h-[30px] font-[600] text-[12px]`}
-        >
-          Ali Akbar
+          Zeeshan
         </p>
       </div>
     </div>

@@ -186,7 +186,7 @@ const Sidebar = () => {
         {createdTeamsNav && (
           <ul
             className={`flex flex-col text-[var(--main-text-color) rounded-[4px] pb-[13px] ${
-              createdTeamsNav && "flex-1 bg-[var(--main-bg-color)]"
+              createdTeamsNav && "flex-1 bg-[var(--main-bg-color)] h-[max-content]"
             }`}
           >
             <li
@@ -206,17 +206,17 @@ const Sidebar = () => {
             <li
               className={`cursor-pointer rounded-[4px] mx-2.5 mt-[8px] bg-white hover:bg-[var(--main-dark-color)] hover:text-white flex items-center justify-center h-[30px] font-[600] text-[12px]`}
             >
-              Soldiers of ALLAH
+              Awesome 4
+            </li>
+            <li
+              className={`cursor-pointer rounded-[4px] mx-2.5 mt-[8px] bg-white hover:bg-[var(--main-dark-color)] hover:text-white flex items-center justify-center h-[30px] font-[600] text-[12px]`}
+            >
+              Buddies 11
             </li>
             <li
               className={`cursor-pointer rounded-[4px] mx-2.5 mt-[8px] bg-white hover:bg-[var(--main-dark-color)] hover:text-white flex items-center justify-center h-[30px] font-[600] text-[12px]`}
             >
               Dreamers
-            </li>
-            <li
-              className={`cursor-pointer rounded-[4px] mx-2.5 mt-[8px] bg-white hover:bg-[var(--main-dark-color)] hover:text-white flex items-center justify-center h-[30px] font-[600] text-[12px]`}
-            >
-              Dreamers 1
             </li>
             <li
               className={`cursor-pointer rounded-[4px] mx-2.5 mt-[8px] bg-white hover:bg-[var(--main-dark-color)] hover:text-white flex items-center justify-center h-[30px] font-[600] text-[12px]`}
@@ -227,11 +227,6 @@ const Sidebar = () => {
               className={`cursor-pointer rounded-[4px] mx-2.5 mt-[8px] bg-white hover:bg-[var(--main-dark-color)] hover:text-white flex items-center justify-center h-[30px] font-[600] text-[12px]`}
             >
               Fantastic Team
-            </li>
-            <li
-              className={`cursor-pointer rounded-[4px] mx-2.5 mt-[8px] bg-white hover:bg-[var(--main-dark-color)] hover:text-white flex items-center justify-center h-[30px] font-[600] text-[12px]`}
-            >
-              Buddies 11
             </li>
           </ul>
         )}

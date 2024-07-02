@@ -16,6 +16,12 @@ const ManageJrAdmin = () => {
     3: false,
     4: false,
   });
+  const jrAdminsTitle: any = {
+    1: "Awesome 4",
+    2: "Buddies 11",
+    3: "Dreamers 4",
+    4: "Fantastic Team",
+  };
   useEffect(() => {
     dispatch(updatePageNavigation("manageJrAdmin"));
   }, [dispatch]);
@@ -43,6 +49,7 @@ const ManageJrAdmin = () => {
             property={item}
             index={item}
             value={jrAdminsShow[item]}
+            title={jrAdminsTitle[item]}
           />
         ))}
       </div>
@@ -52,13 +59,13 @@ const ManageJrAdmin = () => {
 
 export default ManageJrAdmin;
 
-const JrAdminBox = ({ functionControl, property, index, value }: any) => {
+const JrAdminBox = ({ functionControl, property, index, value, title }: any) => {
   return (
     <div className="bg-white px-3 lg:px-10 py-8 rounded-[8px] shadow-md" key={index}>
       {/* Header */}
       <div className="flex flex-col md:flex-row md:justify-between md:items-center">
-        <p className="text-[17px] font-[600] text-[var(--main-text-color)]">
-          Awesome 4 jr Admins
+        <p className="text-[17px] font-[600] text-[var(--main-text-color)] capitalize">
+          {title}
         </p>
         <div className="flex flex-col sm:flex-row gap-2 sm:gap-[17px] justify-end items-center mt-2 sm:mt-0">
           <button
