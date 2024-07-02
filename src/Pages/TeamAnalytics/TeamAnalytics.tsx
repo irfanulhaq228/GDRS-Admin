@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 
 import { updatePageNavigation, updateSidebar } from "../../Features/Features";
 import BarGraphAndAnalyticsPeriod from "../../Components/TeamAnalyticsComponents/BarGraphAndAnalyticsPeriod";
+import AnalyticalPeriodSelection from "../../Components/AnalyticalPeriodSelection/AnalyticalPeriodSelection";
 
 import { TbLayoutSidebarRightCollapse } from "react-icons/tb";
 import { IoIosArrowForward } from "react-icons/io";
@@ -52,7 +53,9 @@ const TeamAnalytics = () => {
         {/* Points Boxes */}
         <div className="flex flex-col xl:flex-row justify-between mt-6 gap-2">
           <div className="rounded-[4px] bg-[--main-bg-color] h-[85px] px-3 xl:px-9 xl:w-[max-content] flex items-center flex-col justify-center text-[14px] font-[600] gap-0.5">
-            <p className="text-center text-[var(--main-dark-color)]">Team Rank</p>
+            <p className="text-center text-[var(--main-dark-color)]">
+              Team Rank
+            </p>
             <p className="text-center">#6</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-4 justify-between gap-2">
@@ -69,7 +72,9 @@ const TeamAnalytics = () => {
               <p className="text-center">90</p>
             </div>
             <div className="rounded-[4px] bg-[--main-bg-color] h-[85px] px-3 xl:px-9 xl:min-w-[max-content] flex items-center flex-col justify-center text-[14px] font-[600] gap-0.5">
-              <p className="text-center text-[var(--main-dark-color)]">Task Ratio</p>
+              <p className="text-center text-[var(--main-dark-color)]">
+                Task Ratio
+              </p>
               <p className="text-center">High</p>
             </div>
             <div className="rounded-[4px] bg-[--main-bg-color] h-[85px] px-3 xl:px-9 xl:min-w-[max-content] flex items-center flex-col justify-center text-[14px] font-[600] gap-0.5">
@@ -81,9 +86,12 @@ const TeamAnalytics = () => {
           </div>
         </div>
         {/* more info's */}
-        <div className="mt-6 py-5 px-6 rounded-[4px] bg-[--main-bg-color]">
+        <div className="mt-6 p-3 sm:p-6 rounded-[4px] bg-[--main-bg-color]">
           {/* bar graph & Analytics Period */}
-          <BarGraphAndAnalyticsPeriod />
+          <div className="flex flex-col xl:flex-row xl:items-end gap-5 xl:gap-10">
+            <BarGraphAndAnalyticsPeriod />
+            <AnalyticalPeriodSelection />
+          </div>
         </div>
       </div>
     </div>
