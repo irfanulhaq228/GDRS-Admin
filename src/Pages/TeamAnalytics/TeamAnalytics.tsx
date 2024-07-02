@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { updatePageNavigation, updateSidebar } from "../../Features/Features";
 import BarGraphAndAnalyticsPeriod from "../../Components/TeamAnalyticsComponents/BarGraphAndAnalyticsPeriod";
 import AnalyticalPeriodSelection from "../../Components/AnalyticalPeriodSelection/AnalyticalPeriodSelection";
+import TeamPerformanceComparison from "../../Components/TeamPerformanceComparison/TeamPerformanceComparison";
 
 import { TbLayoutSidebarRightCollapse } from "react-icons/tb";
 import { IoIosArrowForward } from "react-icons/io";
@@ -95,6 +96,7 @@ const TeamAnalytics = () => {
           {/* team performance comparison */}
           <div className="mt-6">
             <p className="text-[13px] font-[600] text-[--main-dark-color]">Team Performance Comparison</p>
+            <TeamPerformanceComparison />
           </div>
         </div>
       </div>
