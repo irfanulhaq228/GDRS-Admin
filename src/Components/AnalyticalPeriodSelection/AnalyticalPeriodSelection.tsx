@@ -5,7 +5,7 @@ const AnalyticalPeriodSelection = () => {
         Select Analytical Period
       </p>
       <div className="min-w-[210px] pr-1 bg-white rounded-[4px]">
-        <select className="w-[100%] h-[35px] text-[12px] font-[500] px-1 rounded-[4px] focus:outline-none">
+        <select className="w-[100%] h-[35px] text-[12px] font-[500] px-1 rounded-[4px] focus:outline-none bg-white">
           <option>Last Year Analysis</option>
         </select>
       </div>
@@ -13,12 +13,12 @@ const AnalyticalPeriodSelection = () => {
         <input
           type="date"
           placeholder="Select Date"
-          className="rounded-[4px] text-[12px] px-1 h-[35px] text-[#00004B] font-[500] flex-1"
+          className="rounded-[4px] text-[12px] px-1 h-[35px] text-[#00004B] font-[500] flex-1 bg-white"
         />
         <input
           type="date"
           placeholder="Select Date"
-          className="rounded-[4px] text-[12px] px-1 h-[35px] text-[#00004B] font-[500] flex-1"
+          className="rounded-[4px] text-[12px] px-1 h-[35px] text-[#00004B] font-[500] flex-1 bg-white"
         />
       </div>
       <button

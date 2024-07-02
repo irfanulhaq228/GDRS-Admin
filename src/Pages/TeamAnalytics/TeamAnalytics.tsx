@@ -87,7 +87,7 @@ const TeamAnalytics = () => {
           </div>
         </div>
         {/* more info's */}
-        <div className="mt-6 p-2 sm:p-6 rounded-[4px] bg-[--main-bg-color]">
+        <div className="mt-6 p-1.5 sm:p-6 rounded-[4px] bg-[--main-bg-color]">
           {/* bar graph & Analytics Period */}
           <div className="flex flex-col xl:flex-row xl:items-end gap-5 xl:gap-10">
             <BarGraphAndAnalyticsPeriod />
