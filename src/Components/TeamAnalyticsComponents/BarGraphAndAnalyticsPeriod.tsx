@@ -86,12 +86,6 @@ const BarGraphAndAnalyticsPeriod = () => {
           font: {
             size: 10, // Set font size for x-axis labels
           },
-          callback: function (value: number) {
-            if (value >= 1000) {
-              return value / 1000 + "k";
-            }
-            return value;
-          },
         },
         barPercentage: 0.5, // Adjusts the width of the bars
         categoryPercentage: 0.5, // Adjusts the width of the bars

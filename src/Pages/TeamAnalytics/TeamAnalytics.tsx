@@ -18,7 +18,7 @@ const TeamAnalytics = () => {
     dispatch(updateSidebar(true));
   };
   return (
-    <div className="flex-1 bg-[var(--main-bg-color)] min-h-screen py-7 px-[15px] sm:px-[30px] pt-[48px]">
+    <div className="flex-1 bg-[var(--main-bg-color)] min-h-screen py-7 px-[10px] sm:px-[30px] pt-[48px]">
       <button
         className="absolute top-5 left-[18px] text-[20px] text-[var(--main-text-color)] cursor-pointer"
         onClick={fn_controlSideBar}
@@ -36,7 +36,7 @@ const TeamAnalytics = () => {
         </p>
       </div>
       {/* team data */}
-      <div className="px-3 sm:px-4 py-6 bg-white rounded-[4px] mt-6">
+      <div className="px-2 sm:px-4 py-6 bg-white rounded-[4px] mt-6">
         <p className="font-[600] text-[--main-dark-color] text-[15px]">
           Team Analytical Data
         </p>
@@ -87,7 +87,7 @@ const TeamAnalytics = () => {
           </div>
         </div>
         {/* more info's */}
-        <div className="mt-6 p-3 sm:p-6 rounded-[4px] bg-[--main-bg-color]">
+        <div className="mt-6 p-2 sm:p-6 rounded-[4px] bg-[--main-bg-color]">
           {/* bar graph & Analytics Period */}
           <div className="flex flex-col xl:flex-row xl:items-end gap-5 xl:gap-10">
             <BarGraphAndAnalyticsPeriod />
