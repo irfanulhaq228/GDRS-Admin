@@ -92,6 +92,10 @@ const TeamAnalytics = () => {
             <BarGraphAndAnalyticsPeriod />
             <AnalyticalPeriodSelection />
           </div>
+          {/* team performance comparison */}
+          <div className="mt-6">
+            <p className="text-[13px] font-[600] text-[--main-dark-color]">Team Performance Comparison</p>
+          </div>
         </div>
       </div>
     </div>

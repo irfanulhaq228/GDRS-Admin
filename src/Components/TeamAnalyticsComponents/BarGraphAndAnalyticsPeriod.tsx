@@ -108,7 +108,7 @@ const BarGraphAndAnalyticsPeriod = () => {
 
   return (
     <>
-      <div className="bg-white rounded-[4px] p-2 sm:p-6 h-[400px] xl:h-[250px] 2xl:h-[400px] flex-1">
+      <div className="bg-white rounded-[4px] p-2 sm:p-6 h-[100%] md:h-[400px] xl:h-[250px] 2xl:h-[400px] flex-1">
         <Bar data={data} options={options}></Bar>
       </div>
     </>
