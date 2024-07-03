@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { BeatLoader } from "react-spinners";
 import AuthImage from "../../Components/AuthImage/AuthImage";
 
-import fbLogo from "../../assets/images/fb_logo.png";
+// import fbLogo from "../../assets/images/fb_logo.png";
 import googleLogo from "../../assets/images/google_logo.png";
 import appleLogo from "../../assets/images/apply_logo.png";
 
@@ -75,10 +75,10 @@ const Signin = () => {
               </button>
             )}
           </form>
-          <div className="flex justify-center gap-5 md:justify-between mt-[40px]">
-            <div className="w-[100px] lg:w-[130px] h-[68px] rounded-[8px] border border-gray-200 hover:border-gray-300 cursor-pointer flex items-center justify-center">
+          <div className="flex justify-center gap-5 md:gap-8 mt-[40px]">
+            {/* <div className="w-[100px] lg:w-[130px] h-[68px] rounded-[8px] border border-gray-200 hover:border-gray-300 cursor-pointer flex items-center justify-center">
               <img src={fbLogo} className="w-[35px]" />
-            </div>
+            </div> */}
             <div className="w-[100px] lg:w-[130px] h-[68px] rounded-[8px] border border-gray-200 hover:border-gray-300 cursor-pointer flex items-center justify-center">
               <img src={googleLogo} className="w-[35px]" />
             </div>
