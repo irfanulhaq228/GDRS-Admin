@@ -1,6 +1,6 @@
 const IndividualTaskData = () => {
   return (
-    <div className="mt-5 px-3 xl:px-10">
+    <div className="mt-5 px-1 xl:px-10">
       <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:justify-between">
         <p className="text-[13px] font-[600] text-[var(--main-dark-color)]">
           Individual Task Data
@@ -17,7 +17,7 @@ const IndividualTaskData = () => {
           />
         </div>
       </div>
-      <div className="w-[85vw] sm:w-[80vw] overflow-auto md:w-auto rounded-[8px] shadow-md p-5 mt-5">
+      <div className="w-[85vw] sm:w-[80vw] overflow-auto md:w-auto rounded-[8px] shadow-md p-3 sm:p-5 mt-5">
         <div className="flex flex-col gap-3 w-[650px] md:w-auto">
           <Data id={"01"} />
           <Data id={"02"} />
