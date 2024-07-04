@@ -15,6 +15,8 @@ import MembersPerformanceComparison from "../../Components/MembersPerformanceCom
 import MembersTaskAnalytics from "../../Components/MembersTaskAnalytics/MembersTaskAnalytics";
 import MembersVsTeamAverage from "../../Components/MembersVsTeamAverage/MembersVsTeamAverage";
 
+import IndividualTaskData from "../../Components/IndividualTaskData/IndividualTaskData";
+
 import { TbLayoutSidebarRightCollapse } from "react-icons/tb";
 import { IoIosArrowForward } from "react-icons/io";
 
@@ -55,7 +57,7 @@ const TeamAnalytics = () => {
           <p className="text-[13px] text-[var(--main-dark-color)] font-[600] text-center sm:text-start">
             Team Performance Analytics
           </p>
-          <select className="bg-transparent border-[2px] border-[var(--main-dark-color)] rounded-[4px] text-[13px] py-0.5 px-1 text-[var(--main-dark-color)] font-[600] cursor-pointer">
+          <select className="bg-transparent border-[2px] border-[var(--main-dark-color)] rounded-[4px] text-[13px] py-1 px-1 text-[var(--main-dark-color)] font-[600] cursor-pointer focus:outline-none">
             <option disabled>Select</option>
             <option selected>Awesome 4</option>
             <option selected>Awesome 3</option>
@@ -133,11 +135,11 @@ const TeamAnalytics = () => {
           Member Analytical Data
         </p>
         {/* Member Performance Analytics */}
-        <div className="bg-[--main-bg-color] px-2 sm:px-5 py-2 rounded-[4px] mt-3 flex flex-col sm:flex-row gap-1.5 justify-between items-center">
+        <div className="bg-[--main-bg-color] px-2 sm:px-5 py-2 rounded-[4px] mt-3 flex flex-col sm:flex-row gap-1.5 justify-center sm:justify-between items-center">
           <p className="text-[13px] text-[var(--main-dark-color)] font-[600] text-center sm:text-start">
             Member Performance Analytics
           </p>
-          <div className="flex gap-1.5 w-full sm:w-auto">
+          <div className="flex gap-1.5">
             <select className="bg-transparent border-[2px] border-[var(--main-dark-color)] rounded-[4px] text-[13px] py-0.5 px-1 text-[var(--main-dark-color)] font-[600] cursor-pointer focus:outline-none">
               <option disabled>Select</option>
               <option selected>Awesome 4</option>
@@ -220,6 +222,23 @@ const TeamAnalytics = () => {
             <MembersVsTeamAverage />
           </div>
         </div>
+      </div>
+
+      {/* ========================== Task Analytical Data */}
+      <div className="px-2 sm:px-4 py-6 bg-white rounded-[4px] mt-6">
+        <p className="font-[600] text-[--main-dark-color] text-[15px]">
+          Task Analytical Data
+        </p>
+        {/* more info's */}
+        <div className="mt-6 p-1.5 sm:p-6 rounded-[4px] bg-[--main-bg-color]">
+          {/* bar graph & Analytics Period */}
+          <div className="flex flex-col xl:flex-row xl:items-end gap-5 xl:gap-10">
+            <BarGraphAndAnalyticsPeriod />
+            <AnalyticalPeriodSelection />
+          </div>
+        </div>
+        {/* individual task data */}
+        <IndividualTaskData />
       </div>
     </div>
   );
