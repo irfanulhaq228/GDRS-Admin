@@ -17,7 +17,7 @@ const IndividualTaskData = () => {
           />
         </div>
       </div>
-      <div className="w-[95vw] sm:w-[80vw] overflow-auto md:w-auto rounded-[8px] shadow-md p-3 sm:p-5 mt-5">
+      <div className="w-[85vw] sm:w-[80vw] overflow-auto md:w-auto rounded-[8px] shadow-md p-3 sm:p-5 mt-5">
         <div className="flex flex-col gap-3 w-[650px] md:w-auto">
           <Data id={"01"} />
           <Data id={"02"} />
