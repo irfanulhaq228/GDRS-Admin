@@ -78,29 +78,29 @@ const SelectTaskForComparison = () => {
       <TaskComparisonGraph />
       <div className="mt-6 flex flex-col xl:flex-row xl:gap-10 gap-5">
         <div className="flex-1 flex flex-col gap-1">
-          <p className="h-[52px] rounded-[5px] text-[12px] px-4 flex justify-between items-center font-[500] bg-[var(--main-bg-color)]">
+          <p className="h-[52px] rounded-[5px] text-[12px] px-2 sm:px-4 flex justify-between items-center font-[500] bg-[var(--main-bg-color)]">
             <span>Points Earned in selected period</span>
             <span>10,234 pts</span>
           </p>
-          <p className="h-[52px] rounded-[5px] text-[12px] px-4 flex justify-between items-center font-[500] bg-white">
+          <p className="h-[52px] rounded-[5px] text-[12px] px-2 sm:px-4 flex justify-between items-center font-[500] bg-white">
             <span>Task Count in selected period</span>
             <span>799 times</span>
           </p>
-          <p className="h-[52px] rounded-[5px] text-[12px] px-4 flex justify-between items-center font-[500] bg-[var(--main-bg-color)]">
+          <p className="h-[52px] rounded-[5px] text-[12px] px-2 sm:px-4 flex justify-between items-center font-[500] bg-[var(--main-bg-color)]">
             <span>Average Task Completion Rate</span>
             <span>60.5%</span>
           </p>
         </div>
         <div className="flex-1 flex flex-col gap-1">
-          <p className="h-[52px] rounded-[5px] text-[12px] px-4 flex justify-between items-center font-[500] bg-[var(--main-bg-color)]">
+          <p className="h-[52px] rounded-[5px] text-[12px] px-2 sm:px-4 flex justify-between items-center font-[500] bg-[var(--main-bg-color)]">
             <span>Points Earned in selected period</span>
             <span>10,234 pts</span>
           </p>
-          <p className="h-[52px] rounded-[5px] text-[12px] px-4 flex justify-between items-center font-[500] bg-white">
+          <p className="h-[52px] rounded-[5px] text-[12px] px-2 sm:px-4 flex justify-between items-center font-[500] bg-white">
             <span>Task Count in selected period</span>
             <span>902 times</span>
           </p>
-          <p className="h-[52px] rounded-[5px] text-[12px] px-4 flex justify-between items-center font-[500] bg-[var(--main-bg-color)]">
+          <p className="h-[52px] rounded-[5px] text-[12px] px-2 sm:px-4 flex justify-between items-center font-[500] bg-[var(--main-bg-color)]">
             <span>Average Task Completion Rate</span>
             <span>83.9%</span>
           </p>
