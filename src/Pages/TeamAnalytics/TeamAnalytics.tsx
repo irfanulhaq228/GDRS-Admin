@@ -16,6 +16,7 @@ import MembersTaskAnalytics from "../../Components/MembersTaskAnalytics/MembersT
 import MembersVsTeamAverage from "../../Components/MembersVsTeamAverage/MembersVsTeamAverage";
 
 import IndividualTaskData from "../../Components/IndividualTaskData/IndividualTaskData";
+import SelectTaskForComparison from "../../Components/SelectTaskForComparison/SelectTaskForComparison";
 
 import { TbLayoutSidebarRightCollapse } from "react-icons/tb";
 import { IoIosArrowForward } from "react-icons/io";
@@ -237,8 +238,8 @@ const TeamAnalytics = () => {
             <AnalyticalPeriodSelection />
           </div>
         </div>
-        {/* individual task data */}
         <IndividualTaskData />
+        <SelectTaskForComparison />
       </div>
     </div>
   );
