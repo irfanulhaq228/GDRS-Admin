@@ -106,7 +106,7 @@ const TaskComparisonGraph = () => {
   };
 
   return (
-    <div className="shadow-sm mt-5 p-1 sm:p-3 rounded-[5px] scale-[0.95] sm:scale-100 hidden sm:block">
+    <div className="shadow-sm mt-5 p-1 sm:p-3 rounded-[5px] scale-[0.95] sm:scale-100">
       <Line data={data} options={options} />
     </div>
   );
