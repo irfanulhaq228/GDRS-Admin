@@ -13,13 +13,15 @@ import Signup from "./Pages/Auth/Signup";
 import ForgetPassword from "./Pages/Auth/ForgetPassword";
 import ResetPassword from "./Pages/Auth/ResetPassword";
 
-import Dashboard from "./Pages/Dashboard/Dashboard";
-import Setting from "./Pages/Setting/Setting";
 import { RootState } from "./Features/Features";
-import CreatedTasks from "./Pages/CreatedTasks/CreatedTasks";
+
+import Dashboard from "./Pages/Dashboard/Dashboard";
 import CreatedTeams from "./Pages/CreatedTeams/CreatedTeams";
+import ChatBox from "./Pages/ChatBox/ChatBox";
+import CreatedTasks from "./Pages/CreatedTasks/CreatedTasks";
 import ManageJrAdmin from "./Pages/ManageJrAdmin/ManageJrAdmin";
 import TeamAnalytics from "./Pages/TeamAnalytics/TeamAnalytics";
+import Setting from "./Pages/Setting/Setting";
 
 function AppContent() {
   const location = useLocation();
@@ -46,6 +48,7 @@ function AppContent() {
 
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/created-teams" element={<CreatedTeams />} />
+          <Route path="/chat-box" element={<ChatBox />} />
           <Route path="/team-analytics" element={<TeamAnalytics />} />
           <Route path="/created-tasks" element={<CreatedTasks />} />
           <Route path="/manage-junior-admin" element={<ManageJrAdmin />} />

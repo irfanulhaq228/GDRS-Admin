@@ -14,6 +14,7 @@ import jrAdminIcon from "../../assets/svg/jr_admin_icon.svg";
 import teamAnalyticsIcon from "../../assets/svg/team-analytics-icon.svg";
 import settingsIcon from "../../assets/svg/settings-icon.svg";
 import logoutIcon from "../../assets/svg/log-out-icon.svg";
+import chatIcon from "../../assets/svg/chat-icon.svg";
 
 const Sidebar = () => {
   const dispatch = useDispatch();
@@ -22,11 +23,17 @@ const Sidebar = () => {
   const showSidebar = useSelector((state: RootState) => state.showSideBar);
   const pageNavigate = useSelector((state: RootState) => state.pageNavigate);
   const [createdTeamsNav, setCreatedTeamsNav] = useState(false);
+  const [chatBoxNav, setChatBoxNav] = useState(false);
   useEffect(() => {
     if (location.pathname === "/created-teams") {
       setCreatedTeamsNav(true);
     } else {
       setCreatedTeamsNav(false);
+    }
+    if (location.pathname === "/chat-box") {
+      setChatBoxNav(true);
+    } else {
+      setChatBoxNav(false);
     }
   }, [location]);
   const fn_controlSidebar = () => {
@@ -40,9 +47,9 @@ const Sidebar = () => {
   };
   return (
     <div
-      className={`${
-        !showSidebar && "hidden"
-      } fixed lg:relative lg:block w-[290px] bg-[var(--sidebar-color)] min-h-screen z-[999] shadow-lg`}
+      className={`${!showSidebar && "hidden"} fixed lg:relative lg:block ${
+        chatBoxNav ? "w-[max-content]" : "w-[290px]"
+      } bg-[var(--sidebar-color)] min-h-screen z-[999] shadow-lg`}
     >
       <p
         className="absolute end-5 top-5 text-[20px] flex lg:hidden items-center justify-center rounded cursor-pointer text-[--main-text-color]"
@@ -50,18 +57,24 @@ const Sidebar = () => {
       >
         <TbLayoutSidebarRightExpand />
       </p>
-      <div className="relative h-[60px] flex items-center gap-4 mx-[15px] px-4 bg-[#F4F4F4] mt-[48px] rounded-[4px]">
+      <div
+        className={`relative  flex items-center gap-4 mx-[15px] ${
+          chatBoxNav ? "px-1 justify-center mt-5 h-[50px]" : "px-4 mt-[48px] bg-[#F4F4F4] h-[60px]"
+        } rounded-[4px]`}
+      >
         <img src={svg} width={"34px"} />
-        <div>
-          <p className="text-[17px] font-[600]">Kevin Karter</p>
-          <p className="text-[11px]">Admin</p>
-        </div>
+        {!chatBoxNav && (
+          <div>
+            <p className="text-[17px] font-[600]">Kevin Karter</p>
+            <p className="text-[11px]">Admin</p>
+          </div>
+        )}
       </div>
       <div className="mx-[15px] my-[18px] flex gap-[15px] flex-1">
         <ul
           className={`flex gap-[2.5px] flex-col text-[var(--main-text-color) rounded-[4px] h-[max-content] ${
-            createdTeamsNav
-              ? "w-[max-content] bg-[var(--main-bg-color)] pb-2"
+            createdTeamsNav || chatBoxNav
+              ? "w-[54px] bg-[var(--main-bg-color)] pb-2 items-center gap-[18.5px] py-[8.5px]"
               : "w-full"
           }`}
         >
@@ -69,124 +82,124 @@ const Sidebar = () => {
             className={`${
               pageNavigate === "dashboard" && "bg-[var(--main-bg-color)]"
             } cursor-pointer rounded-[4px] hover:bg-[var(--main-bg-color)] flex items-center gap-6 h-[50px] font-[600] text-[15px] ${
-              createdTeamsNav ? "w-[max-content] px-3" : "px-6"
+              createdTeamsNav || chatBoxNav
+                ? "w-[34px] h-[34px] hover:bg-white justify-center rounded-full"
+                : "px-6"
             }`}
+            title="Dashboard Home"
             onClick={() => fn_navigationTo({ nav: "/dashboard" })}
           >
-            <img
-              src={dashboardIcon}
-              width={createdTeamsNav ? "30px" : "21px"}
-              className={`${
-                createdTeamsNav && "hover:bg-white rounded-full p-1"
-              }`}
-            />
-            {!createdTeamsNav && "Dashboard Home"}
+            <img src={dashboardIcon} width={"21px"} />
+            {!createdTeamsNav && !chatBoxNav && "Dashboard Home"}
           </li>
           <li
             className={`${
               pageNavigate === "createdTeams" && "bg-[var(--main-bg-color)]"
             } cursor-pointer rounded-[4px] hover:bg-[var(--main-bg-color)] flex items-center gap-6 h-[50px] font-[600] text-[15px] ${
-              createdTeamsNav ? "w-[max-content] px-3" : "px-6"
+              createdTeamsNav || chatBoxNav
+                ? `w-[34px] h-[34px] ${
+                    createdTeamsNav && "bg-white"
+                  } hover:bg-white justify-center rounded-full`
+                : "px-6"
             }`}
+            title="Created Teams"
             onClick={() => fn_navigationTo({ nav: "/created-teams" })}
           >
-            <img
-              src={createdTeams}
-              width={createdTeamsNav ? "30px" : "21px"}
-              className={`${createdTeamsNav && "bg-white rounded-full p-1"}`}
-            />
-            {!createdTeamsNav && "Created Teams"}
+            <img src={createdTeams} width={"21px"} />
+            {!createdTeamsNav && !chatBoxNav && "Created Teams"}
+          </li>
+          <li
+            className={`${
+              pageNavigate === "chatBox" && "bg-[var(--main-bg-color)]"
+            } cursor-pointer rounded-[4px] hover:bg-[var(--main-bg-color)] flex items-center gap-6 h-[50px] font-[600] text-[15px] ${
+              createdTeamsNav || chatBoxNav
+                ? `w-[34px] h-[34px] ${
+                    chatBoxNav && "bg-white"
+                  } hover:bg-white justify-center rounded-full`
+                : "px-6"
+            }`}
+            title="Chat Box"
+            onClick={() => fn_navigationTo({ nav: "/chat-box" })}
+          >
+            <img src={chatIcon} width={"20px"} className="mt-1 ml-0.5" />
+            {!createdTeamsNav && !chatBoxNav && " Chat Box"}
           </li>
           <li
             className={`${
               pageNavigate === "createdTasks" && "bg-[var(--main-bg-color)]"
             } cursor-pointer rounded-[4px] hover:bg-[var(--main-bg-color)] flex items-center gap-6 h-[50px] font-[600] text-[15px] ${
-              createdTeamsNav ? "w-[max-content] px-3" : "px-6"
+              createdTeamsNav || chatBoxNav
+                ? "w-[34px] h-[34px] hover:bg-white justify-center rounded-full"
+                : "px-6"
             }`}
+            title="Created Tasks"
             onClick={() => fn_navigationTo({ nav: "/created-tasks" })}
           >
-            <img
-              src={createdTasksIcon}
-              width={createdTeamsNav ? "30px" : "21px"}
-              className={`${
-                createdTeamsNav && "hover:bg-white rounded-lg p-1"
-              }`}
-            />
-            {!createdTeamsNav && "Created Tasks"}
+            <img src={createdTasksIcon} width={"21px"} />
+            {!createdTeamsNav && !chatBoxNav && "Created Tasks"}
           </li>
           <li
             className={`${
               pageNavigate === "manageJrAdmin" && "bg-[var(--main-bg-color)]"
             } cursor-pointer rounded-[4px] hover:bg-[var(--main-bg-color)] flex items-center gap-6 h-[50px] font-[600] text-[15px] ${
-              createdTeamsNav ? "w-[max-content] px-3" : "px-6"
+              createdTeamsNav || chatBoxNav
+                ? "w-[34px] h-[34px] hover:bg-white justify-center rounded-full"
+                : "px-6"
             }`}
+            title="Manage Jr Admin"
             onClick={() => fn_navigationTo({ nav: "/manage-junior-admin" })}
           >
-            <img
-              src={jrAdminIcon}
-              width={createdTeamsNav ? "30px" : "21px"}
-              className={`${
-                createdTeamsNav && "hover:bg-white rounded-lg p-1"
-              }`}
-            />
-            {!createdTeamsNav && "Manage Jr Admin"}
+            <img src={jrAdminIcon} width={"23px"} />
+            {!createdTeamsNav && !chatBoxNav && "Manage Jr Admin"}
           </li>
           <li
             className={`${
               pageNavigate === "teamAnalytics" && "bg-[var(--main-bg-color)]"
             } cursor-pointer rounded-[4px] hover:bg-[var(--main-bg-color)] flex items-center gap-6 h-[50px] font-[600] text-[15px] ${
-              createdTeamsNav ? "w-[max-content] px-3" : "px-6"
+              createdTeamsNav || chatBoxNav
+                ? "w-[34px] h-[34px] hover:bg-white justify-center rounded-full"
+                : "px-6"
             }`}
+            title="Team Analytics"
             onClick={() => fn_navigationTo({ nav: "/team-analytics" })}
           >
-            <img
-              src={teamAnalyticsIcon}
-              width={createdTeamsNav ? "30px" : "21px"}
-              className={`${
-                createdTeamsNav && "hover:bg-white rounded-lg p-1"
-              }`}
-            />
-            {!createdTeamsNav && "Team Analytics"}
+            <img src={teamAnalyticsIcon} width={"19px"} />
+            {!createdTeamsNav && !chatBoxNav && "Team Analytics"}
           </li>
           <li
             className={`${
               pageNavigate === "settings" && "bg-[var(--main-bg-color)]"
             } cursor-pointer rounded-[4px] hover:bg-[var(--main-bg-color)] flex items-center gap-6 h-[50px] font-[600] text-[15px] ${
-              createdTeamsNav ? "w-[max-content] px-3" : "px-6"
+              createdTeamsNav || chatBoxNav
+                ? "w-[34px] h-[34px] hover:bg-white justify-center rounded-full"
+                : "px-6"
             }`}
+            title="Settings"
             onClick={() => fn_navigationTo({ nav: "/settings" })}
           >
-            <img
-              src={settingsIcon}
-              width={createdTeamsNav ? "30px" : "21px"}
-              className={`${
-                createdTeamsNav && "hover:bg-white rounded-full p-1"
-              }`}
-            />
-            {!createdTeamsNav && "Settings"}
+            <img src={settingsIcon} width={"21px"} />
+            {!createdTeamsNav && !chatBoxNav && "Settings"}
           </li>
           <li
             className={`${
               pageNavigate === "" && "bg-[var(--main-bg-color)]"
             } cursor-pointer rounded-[4px] hover:bg-[var(--main-bg-color)] flex items-center gap-6 h-[50px] font-[600] text-[15px] ${
-              createdTeamsNav ? "w-[max-content] px-3" : "px-6"
+              createdTeamsNav || chatBoxNav
+                ? "w-[34px] h-[34px] hover:bg-white justify-center rounded-full"
+                : "px-6"
             }`}
+            title="Log Out"
             onClick={() => fn_navigationTo({ nav: "/" })}
           >
-            <img
-              src={logoutIcon}
-              width={createdTeamsNav ? "30px" : "21px"}
-              className={`${
-                createdTeamsNav && "hover:bg-white rounded-full p-1"
-              }`}
-            />
-            {!createdTeamsNav && "Log Out"}
+            <img src={logoutIcon} width={"21px"} />
+            {!createdTeamsNav && !chatBoxNav && "Log Out"}
           </li>
         </ul>
         {createdTeamsNav && (
           <ul
             className={`flex flex-col text-[var(--main-text-color) rounded-[4px] pb-[13px] ${
-              createdTeamsNav && "flex-1 bg-[var(--main-bg-color)] h-[max-content]"
+              createdTeamsNav &&
+              "flex-1 bg-[var(--main-bg-color)] h-[max-content]"
             }`}
           >
             <li
