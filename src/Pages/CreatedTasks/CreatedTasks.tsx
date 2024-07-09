@@ -14,6 +14,7 @@ const CreatedTasks = () => {
   const [loader, setLoader] = useState(true);
   useEffect(() => {
     dispatch(updatePageNavigation("createdTasks"));
+    dispatch(updateSidebar(false));
     setTimeout(() => {
       setLoader(false);
     }, 2000);

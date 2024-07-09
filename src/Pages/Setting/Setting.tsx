@@ -11,6 +11,7 @@ const Setting = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(updatePageNavigation("settings"));
+    dispatch(updateSidebar(false));
   }, [dispatch]);
   const fn_controlSideBar = () => {
     dispatch(updateSidebar(true));

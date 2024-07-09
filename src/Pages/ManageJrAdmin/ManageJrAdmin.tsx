@@ -24,6 +24,7 @@ const ManageJrAdmin = () => {
   };
   useEffect(() => {
     dispatch(updatePageNavigation("manageJrAdmin"));
+    dispatch(updateSidebar(false));
   }, [dispatch]);
   const fn_controlSideBar = () => {
     dispatch(updateSidebar(true));

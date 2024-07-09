@@ -25,6 +25,7 @@ const TeamAnalytics = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(updatePageNavigation("teamAnalytics"));
+    dispatch(updateSidebar(false));
   }, [dispatch]);
   const fn_controlSideBar = () => {
     dispatch(updateSidebar(true));

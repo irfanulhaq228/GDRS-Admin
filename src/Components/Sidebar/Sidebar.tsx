@@ -52,7 +52,7 @@ const Sidebar = () => {
       } bg-[var(--sidebar-color)] min-h-screen z-[999] shadow-lg`}
     >
       <p
-        className="absolute end-5 top-5 text-[20px] flex lg:hidden items-center justify-center rounded cursor-pointer text-[--main-text-color]"
+        className={`absolute text-[20px] flex lg:hidden items-center justify-center rounded cursor-pointer text-[--main-text-color] z-[99] ${pageNavigate === "chatBox" ? "left-[14px] top-1.5" : "end-5 top-5"}`}
         onClick={fn_controlSidebar}
       >
         <TbLayoutSidebarRightExpand />
@@ -72,19 +72,19 @@ const Sidebar = () => {
       </div>
       <div className="mx-[15px] my-[18px] flex gap-[15px] flex-1">
         <ul
-          className={`flex gap-[2.5px] flex-col text-[var(--main-text-color) rounded-[4px] h-[max-content] ${
+          className={`flex flex-col text-[var(--main-text-color) rounded-[4px] h-[max-content] ${
             createdTeamsNav || chatBoxNav
               ? "w-[54px] bg-[var(--main-bg-color)] pb-2 items-center gap-[18.5px] py-[8.5px]"
-              : "w-full"
+              : "w-full gap-[2.5px]"
           }`}
         >
           <li
             className={`${
               pageNavigate === "dashboard" && "bg-[var(--main-bg-color)]"
-            } cursor-pointer rounded-[4px] hover:bg-[var(--main-bg-color)] flex items-center gap-6 h-[50px] font-[600] text-[15px] ${
+            } cursor-pointer rounded-[4px] hover:bg-[var(--main-bg-color)] flex items-center gap-6 font-[600] text-[15px] ${
               createdTeamsNav || chatBoxNav
                 ? "w-[34px] h-[34px] hover:bg-white justify-center rounded-full"
-                : "px-6"
+                : "px-6 h-[50px]"
             }`}
             title="Dashboard Home"
             onClick={() => fn_navigationTo({ nav: "/dashboard" })}
@@ -95,12 +95,12 @@ const Sidebar = () => {
           <li
             className={`${
               pageNavigate === "createdTeams" && "bg-[var(--main-bg-color)]"
-            } cursor-pointer rounded-[4px] hover:bg-[var(--main-bg-color)] flex items-center gap-6 h-[50px] font-[600] text-[15px] ${
+            } cursor-pointer rounded-[4px] hover:bg-[var(--main-bg-color)] flex items-center gap-6 font-[600] text-[15px] ${
               createdTeamsNav || chatBoxNav
                 ? `w-[34px] h-[34px] ${
                     createdTeamsNav && "bg-white"
                   } hover:bg-white justify-center rounded-full`
-                : "px-6"
+                : "px-6 h-[50px]"
             }`}
             title="Created Teams"
             onClick={() => fn_navigationTo({ nav: "/created-teams" })}
@@ -111,12 +111,12 @@ const Sidebar = () => {
           <li
             className={`${
               pageNavigate === "chatBox" && "bg-[var(--main-bg-color)]"
-            } cursor-pointer rounded-[4px] hover:bg-[var(--main-bg-color)] flex items-center gap-6 h-[50px] font-[600] text-[15px] ${
+            } cursor-pointer rounded-[4px] hover:bg-[var(--main-bg-color)] flex items-center gap-6 font-[600] text-[15px] ${
               createdTeamsNav || chatBoxNav
                 ? `w-[34px] h-[34px] ${
                     chatBoxNav && "bg-white"
                   } hover:bg-white justify-center rounded-full`
-                : "px-6"
+                : "px-6 h-[50px]"
             }`}
             title="Chat Box"
             onClick={() => fn_navigationTo({ nav: "/chat-box" })}
@@ -127,10 +127,10 @@ const Sidebar = () => {
           <li
             className={`${
               pageNavigate === "createdTasks" && "bg-[var(--main-bg-color)]"
-            } cursor-pointer rounded-[4px] hover:bg-[var(--main-bg-color)] flex items-center gap-6 h-[50px] font-[600] text-[15px] ${
+            } cursor-pointer rounded-[4px] hover:bg-[var(--main-bg-color)] flex items-center gap-6 font-[600] text-[15px] ${
               createdTeamsNav || chatBoxNav
                 ? "w-[34px] h-[34px] hover:bg-white justify-center rounded-full"
-                : "px-6"
+                : "px-6 h-[50px]"
             }`}
             title="Created Tasks"
             onClick={() => fn_navigationTo({ nav: "/created-tasks" })}
@@ -141,10 +141,10 @@ const Sidebar = () => {
           <li
             className={`${
               pageNavigate === "manageJrAdmin" && "bg-[var(--main-bg-color)]"
-            } cursor-pointer rounded-[4px] hover:bg-[var(--main-bg-color)] flex items-center gap-6 h-[50px] font-[600] text-[15px] ${
+            } cursor-pointer rounded-[4px] hover:bg-[var(--main-bg-color)] flex items-center gap-6 font-[600] text-[15px] ${
               createdTeamsNav || chatBoxNav
                 ? "w-[34px] h-[34px] hover:bg-white justify-center rounded-full"
-                : "px-6"
+                : "px-6 h-[50px]"
             }`}
             title="Manage Jr Admin"
             onClick={() => fn_navigationTo({ nav: "/manage-junior-admin" })}
@@ -155,10 +155,10 @@ const Sidebar = () => {
           <li
             className={`${
               pageNavigate === "teamAnalytics" && "bg-[var(--main-bg-color)]"
-            } cursor-pointer rounded-[4px] hover:bg-[var(--main-bg-color)] flex items-center gap-6 h-[50px] font-[600] text-[15px] ${
+            } cursor-pointer rounded-[4px] hover:bg-[var(--main-bg-color)] flex items-center gap-6 font-[600] text-[15px] ${
               createdTeamsNav || chatBoxNav
                 ? "w-[34px] h-[34px] hover:bg-white justify-center rounded-full"
-                : "px-6"
+                : "px-6 h-[50px]"
             }`}
             title="Team Analytics"
             onClick={() => fn_navigationTo({ nav: "/team-analytics" })}
@@ -169,10 +169,10 @@ const Sidebar = () => {
           <li
             className={`${
               pageNavigate === "settings" && "bg-[var(--main-bg-color)]"
-            } cursor-pointer rounded-[4px] hover:bg-[var(--main-bg-color)] flex items-center gap-6 h-[50px] font-[600] text-[15px] ${
+            } cursor-pointer rounded-[4px] hover:bg-[var(--main-bg-color)] flex items-center gap-6 font-[600] text-[15px] ${
               createdTeamsNav || chatBoxNav
                 ? "w-[34px] h-[34px] hover:bg-white justify-center rounded-full"
-                : "px-6"
+                : "px-6 h-[50px]"
             }`}
             title="Settings"
             onClick={() => fn_navigationTo({ nav: "/settings" })}
@@ -183,10 +183,10 @@ const Sidebar = () => {
           <li
             className={`${
               pageNavigate === "" && "bg-[var(--main-bg-color)]"
-            } cursor-pointer rounded-[4px] hover:bg-[var(--main-bg-color)] flex items-center gap-6 h-[50px] font-[600] text-[15px] ${
+            } cursor-pointer rounded-[4px] hover:bg-[var(--main-bg-color)] flex items-center gap-6 font-[600] text-[15px] ${
               createdTeamsNav || chatBoxNav
                 ? "w-[34px] h-[34px] hover:bg-white justify-center rounded-full"
-                : "px-6"
+                : "px-6 h-[50px]"
             }`}
             title="Log Out"
             onClick={() => fn_navigationTo({ nav: "/" })}

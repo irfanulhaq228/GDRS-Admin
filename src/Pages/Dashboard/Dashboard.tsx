@@ -15,6 +15,7 @@ const Dashboard = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(updatePageNavigation("dashboard"));
+    dispatch(updateSidebar(false));
   }, [dispatch]);
   const fn_controlSideBar = () => {
     dispatch(updateSidebar(true));

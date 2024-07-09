@@ -13,6 +13,7 @@ const CreatedTeams = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(updatePageNavigation("createdTeams"));
+    dispatch(updateSidebar(false));
   }, [dispatch]);
   const fn_controlSideBar = () => {
     dispatch(updateSidebar(true));
