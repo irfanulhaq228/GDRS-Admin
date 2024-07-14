@@ -1,24 +1,65 @@
 import { useState } from "react";
+import { useFormik } from "formik";
 import { useNavigate } from "react-router-dom";
 import { BeatLoader } from "react-spinners";
-import AuthImage from "../../Components/AuthImage/AuthImage";
+import toast from "react-hot-toast";
+import Cookies from "js-cookie";
 
-// import fbLogo from "../../assets/images/fb_logo.png";
+import { signinApi } from "../../apis/apis";
+import { signinSchema } from "../../schemas/schemas";
+import AuthImage from "../../Components/AuthImage/AuthImage";
+import VerificationCode from "../../Components/VerificationCode/VerificationCode";
+
 import googleLogo from "../../assets/images/google_logo.png";
 import appleLogo from "../../assets/images/apply_logo.png";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 
 const Signin = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-  const fn_submit = (e: any) => {
-    e.preventDefault();
-    setLoading(true);
-    setTimeout(() => {
-      navigate("/dashboard");
-    }, 2000);
+  const [passwordType, setPasswordType] = useState("password");
+  const [verifyCode, setVerifyCode] = useState(false);
+  // ================= Formik ================= //
+  const initialValues = {
+    email: "",
+    password: "",
   };
+  const Formik = useFormik({
+    initialValues,
+    validationSchema: signinSchema,
+    onSubmit: async (values, { resetForm }) => {
+      setLoading(true);
+      const response: any = await signinApi(values);
+      if (response?.status === 200) {
+        if (response?.data?.status) {
+          resetForm();
+          Cookies.set("access", response?.data?.response?.tokens?.access, {
+            expires: 7,
+          });
+          Cookies.set("refresh", response?.data?.response?.tokens?.refresh, {
+            expires: 7,
+          });
+          navigate("/dashboard");
+          toast.success("Admin Login Successfuly");
+        } else {
+          resetForm();
+          setLoading(false);
+          toast.error(response?.data?.message);
+        }
+      } else if (response?.status === 403) {
+        setLoading(false);
+        toast.error("Accout not Verified, Check Email and Write Code Here");
+        setVerifyCode(true);
+      } else {
+        resetForm();
+        setLoading(false);
+        toast.error("Server Error");
+      }
+    },
+  });
   return (
     <div className="sign-in flex min-h-full flex-col md:flex-row">
+      <VerificationCode verifyCode={verifyCode} setVerifyCode={setVerifyCode} />
       <AuthImage />
       <div className="flex-1 flex justify-center items-center py-14">
         <div className="w-[90%] lg:w-[460px]">
@@ -29,17 +70,50 @@ const Signin = () => {
             Enter your email and password to login to your account.
           </p>
           <form
-            className="flex flex-col gap-[15px]"
-            onSubmit={(e) => fn_submit(e)}
+            className="flex flex-col gap-[15px] relative"
+            onSubmit={Formik.handleSubmit}
           >
             <input
               className="border-[#b1bbc694] border-[1.5px] focus:outline-none rounded-[5px] h-[50px] px-[20px] text-[14px] bg-[#00004b05]"
               placeholder="Email Address"
+              name="email"
+              value={Formik.values.email}
+              onChange={Formik.handleChange}
+              onBlur={Formik.handleBlur}
             />
+            {Formik?.errors?.email && Formik?.touched?.email && (
+              <p className="mt-[-16px] text-[red] font-[500] text-[12px]">
+                {Formik?.errors?.email}
+              </p>
+            )}
             <input
+              type={passwordType}
               className="border-[#b1bbc694] border-[1.5px] focus:outline-none rounded-[5px] h-[50px] px-[20px] text-[14px] bg-[#00004b05]"
               placeholder="Enter Password"
+              name="password"
+              value={Formik.values.password}
+              onChange={Formik.handleChange}
+              onBlur={Formik.handleBlur}
             />
+            <span
+              className={`absolute right-[15px] cursor-pointer ${
+                Formik?.touched?.email && Formik?.errors?.email
+                  ? "top-[100px]"
+                  : "top-[82px]"
+              } `}
+              onClick={() =>
+                passwordType === "password"
+                  ? setPasswordType("text")
+                  : setPasswordType("password")
+              }
+            >
+              {passwordType === "password" ? <FaRegEyeSlash /> : <FaRegEye />}
+            </span>
+            {Formik?.errors?.password && Formik?.touched?.password && (
+              <p className="mt-[-16px] text-[red] font-[500] text-[12px]">
+                {Formik?.errors?.password}
+              </p>
+            )}
             <div className="flex justify-between">
               <label className="text-[12px] flex items-center gap-[10px]">
                 <input type="checkbox" />
@@ -76,9 +150,6 @@ const Signin = () => {
             )}
           </form>
           <div className="flex justify-center gap-5 md:gap-8 mt-[40px]">
-            {/* <div className="w-[100px] lg:w-[130px] h-[68px] rounded-[8px] border border-gray-200 hover:border-gray-300 cursor-pointer flex items-center justify-center">
-              <img src={fbLogo} className="w-[35px]" />
-            </div> */}
             <div className="w-[100px] lg:w-[130px] h-[68px] rounded-[8px] border border-gray-200 hover:border-gray-300 cursor-pointer flex items-center justify-center">
               <img src={googleLogo} className="w-[35px]" />
             </div>

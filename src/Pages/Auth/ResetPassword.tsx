@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { BeatLoader } from "react-spinners";
+
 import AuthImage from "../../Components/AuthImage/AuthImage";
 
 import { GoEye, GoEyeClosed } from "react-icons/go";
@@ -8,6 +10,7 @@ import { RxCross2 } from "react-icons/rx";
 
 const ResetPassword = () => {
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   const [newPassword, setNewPassword] = useState(true);
   const [confirmPassword, setConfirmPassword] = useState(true);
 
@@ -58,8 +61,18 @@ const ResetPassword = () => {
 
   const fn_submit = (e: any) => {
     e.preventDefault();
-    if (newPasswordText !== "" && confirmPasswordText !== "" && correctNewPassword && correctConfirmPassword) {
-      navigate("/");
+    if (
+      newPasswordText !== "" &&
+      confirmPasswordText !== "" &&
+      correctNewPassword &&
+      correctConfirmPassword
+    ) {
+      console.log(newPasswordText);
+      console.log(confirmPasswordText);
+      setLoading(true);
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
     }
   };
 
@@ -150,14 +163,28 @@ const ResetPassword = () => {
                 Lowercase Letter
               </p>
             </div>
-            <input
-              type="submit"
-              value={"Reset Password"}
-              style={{
-                backgroundImage: "linear-gradient(to bottom, #0000B1, #00004B)",
-              }}
-              className="cursor-pointer rounded-[5px] text-white font-[500] h-[50px] mt-[5px] text-[17px]"
-            />
+            {!loading ? (
+              <input
+                type="submit"
+                value={"Reset Password"}
+                style={{
+                  backgroundImage:
+                    "linear-gradient(to bottom, #0000B1, #00004B)",
+                }}
+                className="cursor-pointer rounded-[5px] text-white font-[500] h-[50px] mt-[5px] text-[17px]"
+              />
+            ) : (
+              <button
+                className="cursor-not-allowed rounded-[5px] text-white font-[500] h-[50px] mt-[5px] text-[17px]"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(to bottom, #0000B1, #00004B)",
+                }}
+                disabled
+              >
+                <BeatLoader color="#fff" className="pt-2" />
+              </button>
+            )}
           </form>
           <p className="bottom-5 text-[12px] text-[#8D93A1] hidden md:absolute">
             © Copyright GDRS 2024

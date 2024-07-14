@@ -11,6 +11,7 @@ import Sidebar from "./Components/Sidebar/Sidebar";
 import Signin from "./Pages/Auth/Signin";
 import Signup from "./Pages/Auth/Signup";
 import ForgetPassword from "./Pages/Auth/ForgetPassword";
+import OTP from "./Pages/Auth/OTP";
 import ResetPassword from "./Pages/Auth/ResetPassword";
 
 import { RootState } from "./Features/Features";
@@ -29,6 +30,7 @@ function AppContent() {
     location.pathname !== "/" &&
     location.pathname !== "/signup" &&
     location.pathname !== "/reset-password" &&
+    location.pathname !== "/otp" &&
     location.pathname !== "/forget-password";
   const darkMode = useSelector((state: RootState) => state.darkMode);
 
@@ -44,6 +46,7 @@ function AppContent() {
           <Route path="/" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/forget-password" element={<ForgetPassword />} />
+          <Route path="/otp" element={<OTP />} />
           <Route path="/reset-password" element={<ResetPassword />} />
 
           <Route path="/dashboard" element={<Dashboard />} />

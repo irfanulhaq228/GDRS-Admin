@@ -1,22 +1,54 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { BeatLoader } from "react-spinners";
+import { useFormik } from "formik";
+import toast from "react-hot-toast";
+
+import { signupApi } from "../../apis/apis";
+import { signupSchema } from "../../schemas/schemas";
 import AuthImage from "../../Components/AuthImage/AuthImage";
 
 import fbLogo from "../../assets/images/fb_logo.png";
 import googleLogo from "../../assets/images/google_logo.png";
 import appleLogo from "../../assets/images/apply_logo.png";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 
 const Signup = () => {
   const navigate = useNavigate();
+  const [passwordType, setPasswordType] = useState("password");
+  const [confirmPasswordType, setConfirmPasswordType] = useState("password");
   const [loading, setLoading] = useState(false);
-  const fn_submit = (e: any) => {
-    e.preventDefault();
-    setLoading(true);
-    setTimeout(() => {
-      navigate("/dashboard");
-    }, 2000);
+  // ================= Formik ================= //
+  const initialValues = {
+    email: "",
+    phone_number: "",
+    password: "",
+    confirm_password: "",
   };
+  const Formik = useFormik({
+    initialValues,
+    validationSchema: signupSchema,
+    onSubmit: async (values, { resetForm }) => {
+      setLoading(true);
+      const response: any = await signupApi(values);
+      if (response?.status === 200) {
+        if (response?.data?.status) {
+          resetForm();
+          setLoading(false);
+          navigate("/dashboard");
+          toast.success("Admin Created Successfuly");
+        } else {
+          resetForm();
+          setLoading(false);
+          toast.success(response?.data?.message);
+        }
+      } else {
+        resetForm();
+        setLoading(false);
+        toast.success("Server Error");
+      }
+    },
+  });
   return (
     <div className="sign-in flex min-h-full flex-col md:flex-row">
       <AuthImage />
@@ -30,24 +62,91 @@ const Signup = () => {
           </p>
           <form
             className="flex flex-col gap-[15px]"
-            onSubmit={(e) => fn_submit(e)}
+            onSubmit={Formik.handleSubmit}
           >
             <input
               className="border-[#b1bbc694] border-[1.5px] focus:outline-none rounded-[5px] h-[50px] px-[20px] text-[14px] bg-[#00004b05]"
               placeholder="Email Address"
+              name="email"
+              value={Formik.values.email}
+              onChange={Formik.handleChange}
+              onBlur={Formik.handleBlur}
             />
+            {Formik?.errors?.email && Formik?.touched?.email && (
+              <p className="mt-[-16px] text-[red] font-[500] text-[12px]">
+                {Formik?.errors?.email}
+              </p>
+            )}
             <input
               className="border-[#b1bbc694] border-[1.5px] focus:outline-none rounded-[5px] h-[50px] px-[20px] text-[14px] bg-[#00004b05]"
               placeholder="Phone Number"
+              name="phone_number"
+              value={Formik.values.phone_number}
+              onChange={Formik.handleChange}
+              onBlur={Formik.handleBlur}
             />
-            <input
-              className="border-[#b1bbc694] border-[1.5px] focus:outline-none rounded-[5px] h-[50px] px-[20px] text-[14px] bg-[#00004b05]"
-              placeholder="Password"
-            />
-            <input
-              className="border-[#b1bbc694] border-[1.5px] focus:outline-none rounded-[5px] h-[50px] px-[20px] text-[14px] bg-[#00004b05]"
-              placeholder="Confirm Password"
-            />
+            {Formik?.errors?.phone_number && Formik?.touched?.phone_number && (
+              <p className="mt-[-16px] text-[red] font-[500] text-[12px]">
+                {Formik?.errors?.phone_number}
+              </p>
+            )}
+            <div className="relative">
+              <input
+                type={passwordType}
+                className="w-full border-[#b1bbc694] border-[1.5px] focus:outline-none rounded-[5px] h-[50px] px-[20px] text-[14px] bg-[#00004b05]"
+                placeholder="Password"
+                name="password"
+                value={Formik.values.password}
+                onChange={Formik.handleChange}
+                onBlur={Formik.handleBlur}
+              />
+              <span
+                className={`absolute right-[15px] top-[16px] cursor-pointer`}
+                onClick={() =>
+                  passwordType === "password"
+                    ? setPasswordType("text")
+                    : setPasswordType("password")
+                }
+              >
+                {passwordType === "password" ? <FaRegEyeSlash /> : <FaRegEye />}
+              </span>
+            </div>
+            {Formik?.errors?.password && Formik?.touched?.password && (
+              <p className="mt-[-16px] text-[red] font-[500] text-[12px]">
+                {Formik?.errors?.password}
+              </p>
+            )}
+            <div className="relative">
+              <input
+                type={confirmPasswordType}
+                className="w-full border-[#b1bbc694] border-[1.5px] focus:outline-none rounded-[5px] h-[50px] px-[20px] text-[14px] bg-[#00004b05]"
+                placeholder="Confirm Password"
+                name="confirm_password"
+                value={Formik.values.confirm_password}
+                onChange={Formik.handleChange}
+                onBlur={Formik.handleBlur}
+              />
+              <span
+                className={`absolute right-[15px] top-[16px] cursor-pointer`}
+                onClick={() =>
+                  confirmPasswordType === "password"
+                    ? setConfirmPasswordType("text")
+                    : setConfirmPasswordType("password")
+                }
+              >
+                {confirmPasswordType === "password" ? (
+                  <FaRegEyeSlash />
+                ) : (
+                  <FaRegEye />
+                )}
+              </span>
+            </div>
+            {Formik?.errors?.confirm_password &&
+              Formik?.touched?.confirm_password && (
+                <p className="mt-[-16px] text-[red] font-[500] text-[12px]">
+                  {Formik?.errors?.confirm_password}
+                </p>
+              )}
             {!loading ? (
               <input
                 type="submit"
